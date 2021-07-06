@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PlayerSelection {
     private ArrayList<Player> mPlayers;
+    private Scanner mScanner = new Scanner(System.in);
 
     /**
      * Print the selection command list.
@@ -20,7 +22,30 @@ public class PlayerSelection {
      * Add a new player to the list.
      */
     public void AddPlayer() {
-        mPlayers.add(new Player());
+        System.out.print("Enter player name: ");
+        String name = mScanner.nextLine();
+
+        System.out.print("Enter the number of years the players have played: ");
+        int years = Integer.parseInt(mScanner.nextLine());
+
+        System.out.print("Enter the player's type (batting, bowling, keeping): ");
+        String type = mScanner.nextLine();
+        Player.Type pType;
+
+        // Validate the type.
+        {
+            if (type.equalsIgnoreCase("batting"))
+                pType = Player.Type.BATTING;
+            else if (type.equalsIgnoreCase("bowling"))
+                pType = Player.Type.BOWLING;
+            else
+                pType = Player.Type.KEEPING;
+        }
+
+        System.out.print("Enter player's statistics: ");
+        double stat = Double.parseDouble(mScanner.nextLine());
+
+        mPlayers.add(new Player(name, years, pType, stat));
     }
 
     /**
