@@ -64,20 +64,53 @@ public class PlayerSelection {
      * Sort and print out the two best batsmans.
      */
     public void BestBatsmans() {
+        Player[] players = { new Player(), new Player() };
 
+        int counter = 1;
+        for (Player player : mPlayers) {
+            if (player.getType() == Player.Type.BATTING) {
+                if (counter < 0)
+                    return;
+
+                players[counter] = player;
+                counter--;
+            }
+        }
     }
 
     /**
      * Sort and print out the best bowlers.
      */
     public void BestBowlers() {
+        Player[] players = { new Player(), new Player() };
 
+        int counter = 1;
+        for (Player player : mPlayers) {
+            if (player.getType() == Player.Type.BOWLING) {
+                if (counter < 0)
+                    return;
+
+                players[counter] = player;
+                counter--;
+            }
+        }
     }
 
     /**
      * Iterate and find the best keeper.
      */
     public void BestKeeper() {
+        Player[] players = { new Player(), new Player() };
 
+        int counter = 1;
+        for (Player player : mPlayers) {
+            if (player.getType() == Player.Type.KEEPING) {
+                if (counter < 0)
+                    return;
+
+                players[counter] = player;
+                counter--;
+            }
+        }
     }
 }

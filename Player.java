@@ -9,6 +9,9 @@ public class Player {
 
     private Type type;
 
+    Player() {
+    }
+
     Player(String name, Type toype, int years, double stat, int ratting) {
         Name = name;
         this.type = toype;
@@ -17,7 +20,7 @@ public class Player {
         rating = ratting;
     }
 
-    public Type getAverage() {
+    public Type getType() {
         return type;
     }
 
