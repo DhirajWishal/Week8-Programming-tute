@@ -45,7 +45,10 @@ public class PlayerSelection {
         System.out.print("Enter player's statistics: ");
         double stat = Double.parseDouble(mScanner.nextLine());
 
-        mPlayers.add(new Player(name, years, pType, stat));
+        System.out.print("Enter player rating: ");
+        int rating = Integer.parseInt(mScanner.nextLine());
+
+        mPlayers.add(new Player(name, pType, years, stat, rating));
     }
 
     /**

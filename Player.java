@@ -1,13 +1,27 @@
 public class Player {
-    public enum Type { BATTING, BOWLING, KEEPING }
+    String Name;
+    int age, rating;
+    double stat;
 
-    Player() {
+    public enum Type {
+        BATTING, BOWLING, KEEPING
+    };
+
+    private Type type;
+
+    Player(String name, Type toype, int years, double stat, int ratting) {
+        Name = name;
+        this.type = toype;
+        age = years;
+        this.stat = stat;
+        rating = ratting;
     }
 
-    Player(String name, int years, Type type, double stats) {
+    public Type getAverage() {
+        return type;
     }
 
-    public static void main() {
-        int i = 0;
+    public void getPlayerDetails() {
+        System.out.println(" Name :" + Name + "/n Age :" + age + "/n Type :" + type);
     }
 }
